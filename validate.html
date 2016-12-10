@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script src="jsfile/validate.js"></script>
+<body ng-app="myApp" ng-controller="myCtrl">
+<ng-form name="myform">
+  PAN Number:<input type="text"  name="pan" ng-pattern="/^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/"required  ng-model="pan"/><br>
+  <span ng-show="myform.pan.$error.required " style="color:red"> required.</span>
+    <span ng-show="myform.pan.$error.pattern" style="color:red">enter valid pan number</span>
+</p><br>
+  PASSWORD:<input type="password" name="ps" required ng-model="password"/><br>
+  <span ng-show="myform.ps.$error.required" style="color:red">The password is required.</span>
+
+</p><br>
+
+
+  <input type="button" value="submit" ng-disabled="myform.$invalid"/>
+</ng-form>
+
+
+</div>
+
+
+</body>
+</html>
